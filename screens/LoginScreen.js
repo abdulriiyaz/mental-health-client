@@ -20,7 +20,7 @@ const LoginScreen = () => {
                     <Text
                         style={tw`tracking-wide text-[${textColor}] text-3xl text-center`}
                     >
-                        Phone Number
+                        Phone
                     </Text>
                     <TextInput
                         style={tw`h-12 w-54 text-xl tracking-wide rounded-xl m-5 pl-5 items-center border-2 border-[${accentColor}] font-bold text-[${textColor}]`}
