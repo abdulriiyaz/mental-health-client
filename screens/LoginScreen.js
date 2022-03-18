@@ -14,6 +14,7 @@ import {
     secondaryColor,
 } from "../beautify/colors";
 import Icon from "react-native-vector-icons/AntDesign";
+import MyButton from "../components/MyButton";
 
 const LoginScreen = () => {
     return (
@@ -33,24 +34,13 @@ const LoginScreen = () => {
                     ></Icon>
                     <TextInput
                         //set keyboard type to number
-                        placeholder="Enter Phone"
+                        placeholder="Phone"
                         placeholderTextColor={secondaryColor}
                         maxLength={10}
                         keyboardType="number-pad"
                         style={tw`h-14 w-full text-xl tracking-tight rounded-xl m-5 pl-5 items-center border-2 border-[${secondaryColor}] font-bold text-[${textColor}]`}
                     ></TextInput>
-                    <TouchableOpacity
-                        style={tw`flex h-14 w-full p-4 bg-[${accentColor}] rounded-2xl font-bold text-[${textColor}] text-center items-center justify-center`}
-                        onPress={() => {
-                            //Auth and navigate to Home/QuestionaireScreen
-                        }}
-                    >
-                        <Text
-                            style={tw`tracking-tight text-[${textColor}] text-lg text-center items-center justify-center`}
-                        >
-                            SUBMIT
-                        </Text>
-                    </TouchableOpacity>
+                    <MyButton title="Submit" />
                 </View>
             </View>
         </>

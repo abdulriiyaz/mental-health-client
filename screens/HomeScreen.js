@@ -17,9 +17,18 @@ import {
 //import { FaBrain } from "react-icons/fa";
 import Icon from "react-native-vector-icons/AntDesign";
 import Toast from "react-native-simple-toast";
+import MyButton from "../components/MyButton";
 
 const HomeScreen = () => {
-    //const tasks = [{}];
+    const tasks = [
+        "Get Something Done",
+        "Do Some Exercies",
+        "Do Some Work",
+        "Clean The House",
+        "Beat up Rohit",
+        "Steal Some Money",
+        "Say Sorry To GOD",
+    ];
     return (
         <>
             <View
@@ -61,14 +70,19 @@ const HomeScreen = () => {
                     <ScrollView
                         style={tw`flex h-2/4 bg-[${backgroundColor}] p-2 rounded-xl w-full`}
                     >
-                        <ListItems task="Smoke a cigarette" />
+                        {/* <ListItems task="Smoke a cigarette" />
                         <ListItems task="Get Fucked" />
                         <ListItems task="Be a Cuck" />
                         <ListItems task="Fuck Everybody" />
-                        <ListItems task="Fuck your life" />
+                        <ListItems task="Fuck your life" /> */}
+                        {tasks.map((item, idx) => {
+                            return <ListItems task={item} key={idx} />;
+                        })}
                     </ScrollView>
                 </View>
-                <Text>Hello World!</Text>
+                <View style={tw`mt-4 h-full w-full`}>
+                    <MyButton title="Take a quiz" />
+                </View>
             </View>
         </>
     );

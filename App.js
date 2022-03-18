@@ -10,8 +10,8 @@ export default function App() {
     return (
         <>
             {/* <SplashScreen /> */}
-            <LoginScreen />
-            {/* <HomeScreen /> */}
+            {/* <LoginScreen /> */}
+            <HomeScreen />
         </>
     );
 }
