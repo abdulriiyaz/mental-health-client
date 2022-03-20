@@ -5,6 +5,7 @@ import {
     FlatList,
     ScrollView,
     TouchableOpacity,
+    SafeAreaView,
 } from "react-native";
 import React, { useState, createContext } from "react";
 import tw from "twrnc";
@@ -37,22 +38,21 @@ const HomeScreen = () => {
                 <MenuModal menuModal={menuModal} setMenuModal={setMenuModal} />
             ) : (
                 <>
-                    <View
+                    <SafeAreaView
                         style={tw`h-full w-full bg-[${backgroundColor}] flex items-center m-0 p-2`}
                     >
                         {/* <StatusBar style="auto" /> */}
 
                         <View
-                            style={tw`flex flex-row h-20 top-0 left-0 p-0 rounded-2xl w-full mt-8 justify-between text-center`}
+                            style={tw`flex flex-row h-1/9 top-0 left-0 p-0 rounded-2xl w-full mt-4 justify-between text-center`}
                         >
                             <Icon
                                 onPress={() => {
-                                    //Side Menu Component
-                                    Toast.show("Pressed Menu");
+                                    //Menu Modal Component
                                     setMenuModal(!menuModal);
                                 }}
                                 name="bars"
-                                size={30}
+                                size={25}
                                 color={accentColor}
                                 style={tw`mt-4 flex p-2 w-2/9 text-center`}
                             />
@@ -62,7 +62,7 @@ const HomeScreen = () => {
                                     Toast.show("Pressed Profile");
                                 }}
                                 name="user"
-                                size={30}
+                                size={23}
                                 color={accentColor}
                                 style={tw`mt-4 flex p-2 w-2/9 text-center`}
                             />
@@ -71,12 +71,12 @@ const HomeScreen = () => {
                             style={tw`flex h-2/4 border-4 border-[${secondaryColor}] rounded-lg w-full p-2`}
                         >
                             <Text
-                                style={tw`font-bold text-white text-xl p-2 rounded-sm border-4 border-[${secondaryColor}] text-center tracking-wide mb-1.5`}
+                                style={tw`text-white text-xl mx-1.5 py-4 rounded-lg bg-[${secondaryColor}] mt-1. text-center tracking-wide mb-1.5`}
                             >
                                 Available Tasks
                             </Text>
                             <ScrollView
-                                style={tw`flex h-2/4 bg-[${backgroundColor}] p-2 rounded-xl w-full`}
+                                style={tw`flex h-2/4 bg-[${backgroundColor}] p-1.5 mt-1.5 rounded-xl w-full`}
                             >
                                 {/* <ListItems task="Smoke a cigarette" />
                         <ListItems task="Get Fucked" />
@@ -88,11 +88,13 @@ const HomeScreen = () => {
                                 })}
                             </ScrollView>
                         </View>
-                        <View style={tw`mt-4 h-full w-full`}>
-                            <MyButton title="TAKE A QUIZ" filled={true} />
-                            <MyButton title="GENERATE TASK" filled={false} />
+                        <View
+                            style={tw`flex mt-4 h-full w-full rounded-lg border-4 border-[${secondaryColor}] p-12 m-2 items-center`}
+                        >
+                            <MyButton title="TAKE A QUIZ" icon="paperclip" />
+                            <MyButton title="GENERATE TASK" icon="pluscircle" />
                         </View>
-                    </View>
+                    </SafeAreaView>
                 </>
             )}
         </>
@@ -109,16 +111,16 @@ const ListItems = (props) => {
                 }}
             >
                 <View
-                    style={tw`flex flex-row h-16 bg-[${secondaryColor}] border border-[${textColor}] rounded-xl items-center justify-between w-full mb-4`}
+                    style={tw`flex flex-row h-16 bg-[${secondaryColor}] border border-[${accentColor}] rounded-xl items-center justify-between w-full mb-2.5 mt-1.5`}
                 >
                     <Text
-                        style={tw`font-bold text-[${accentColor}] text-xl tracking-tight p-4`}
+                        style={tw`text-[${textColor}] text-sm tracking-tight p-4`}
                     >
                         {props.task}
                     </Text>
                     <Icon
                         name={isChecked ? "check" : ""}
-                        size={30}
+                        size={20}
                         color={accentColor}
                         style={tw`flex w-2/9 text-center`}
                     />

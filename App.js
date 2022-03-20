@@ -5,13 +5,15 @@ import React, { useState } from "react";
 import SplashScreen from "./screens/SplashScreen";
 import LoginScreen from "./screens/LoginScreen";
 import HomeScreen from "./screens/HomeScreen";
+import QuestionaireScreen from "./screens/QuestionaireScreen";
 
 export default function App() {
     return (
         <>
             {/* <SplashScreen /> */}
             {/* <LoginScreen /> */}
-            <HomeScreen />
+            {/* <HomeScreen /> */}
+            <QuestionaireScreen />
         </>
     );
 }

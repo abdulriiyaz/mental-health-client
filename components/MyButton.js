@@ -13,21 +13,21 @@ const MyButton = (props) => {
     return (
         <>
             <TouchableOpacity
-                style={tw`flex flex-row border border-white h-14 w-full p-2 pl-6 pr-6 mb-4 bg-[${accentColor}] rounded-2xl font-bold text-center items-center justify-between`}
+                style={tw`flex flex-row h-1/9 w-full p-2 pl-6 pr-0 mb-4 bg-[${accentColor}] rounded-2xl font-bold text-center items-center justify-between`}
                 onPress={() => {
                     //Auth and navigate to Home/QuestionaireScreen
                 }}
             >
                 <Text
-                    style={tw`tracking-tight text-[${textColor}] text-lg text-center p-0 m-0 items-center justify-center`}
+                    style={tw`tracking-wide text-[${textColor}] text-sm text-center p-0 m-0 items-center justify-center`}
                 >
                     {props.title}
                 </Text>
                 <Icon
-                    name="heart"
+                    name={props.icon}
                     size={20}
                     color={secondaryColor}
-                    style={tw`flex w-18 text-center justify-center border border-white items-center p-4 h-14`}
+                    style={tw`flex w-18 text-center justify-center items-center p-4 h-14`}
                 ></Icon>
             </TouchableOpacity>
         </>
