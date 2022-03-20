@@ -13,7 +13,8 @@ export default function App() {
             {/* <SplashScreen /> */}
             {/* <LoginScreen /> */}
             {/* <HomeScreen /> */}
-            <QuestionaireScreen />
+            {/* <QuestionaireScreen /> */}
+            <StatusBar style="auto" />
         </>
     );
 }

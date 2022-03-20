@@ -38,9 +38,9 @@ const LoginScreen = () => {
                         placeholderTextColor={secondaryColor}
                         maxLength={10}
                         keyboardType="number-pad"
-                        style={tw`h-14 w-full text-xl tracking-tight rounded-xl m-5 pl-5 items-center border-2 border-[${secondaryColor}] font-bold text-[${textColor}]`}
+                        style={tw`h-14 w-full text-xl tracking-tight rounded-xl m-5 pl-5 items-center border-2 border-[${secondaryColor}] my-8 font-bold text-[${textColor}]`}
                     ></TextInput>
-                    <MyButton title="Submit" />
+                    <MyButton title="Submit" icon="checkcircle" />
                 </View>
             </View>
         </>

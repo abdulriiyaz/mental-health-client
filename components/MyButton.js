@@ -13,7 +13,7 @@ const MyButton = (props) => {
     return (
         <>
             <TouchableOpacity
-                style={tw`flex flex-row h-1/9 w-full p-2 pl-6 pr-0 mb-4 bg-[${accentColor}] rounded-2xl font-bold text-center items-center justify-between`}
+                style={tw`flex flex-row h-14 w-full p-2 pl-6 pr-0 mb-4 bg-[${accentColor}] rounded-2xl font-bold text-center items-center justify-between`}
                 onPress={() => {
                     //Auth and navigate to Home/QuestionaireScreen
                 }}

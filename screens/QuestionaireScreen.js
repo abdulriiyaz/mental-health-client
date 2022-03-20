@@ -26,15 +26,17 @@ const QuestionaireScreen = () => {
             style={tw`h-full w-full bg-[${backgroundColor}] m-0 py-4 px-1.5 flex justify-center items-center shadow-xl`}
         >
             <View
-                style={tw`flex w-full h-2/3 bg-[${secondaryColor}] p-4 items-center justify-center rounded-2xl`}
+                style={tw`flex w-full h-5/6 border-4 border-[${secondaryColor}] p-6 items-center justify-evenly rounded-2xl shadow-sm`}
             >
                 <Text
-                    style={tw`w-full h-25 text-center py-4 text-white my-4 text-2xl rounded-lg bg-[${backgroundColor}]`}
+                    style={tw`w-full h-42 border-4 border-[${accentColor}] text-center py-4 my-4 text-white text-xl rounded-lg bg-[${backgroundColor}]`}
                 >
                     Are you depressed?
                 </Text>
                 <MyButton title="Yes" icon="checkcircle" />
                 <MyButton title="No" icon="closecircle" />
+                <MyButton title="Maybe" icon="meh" />
+                <MyButton title="Not Sure" icon="warning" />
             </View>
         </SafeAreaView>
     );
