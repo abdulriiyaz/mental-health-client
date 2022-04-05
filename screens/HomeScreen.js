@@ -6,30 +6,30 @@ import {
     ScrollView,
     TouchableOpacity,
     SafeAreaView,
-} from "react-native";
-import React, { useState, createContext } from "react";
-import tw from "twrnc";
+} from 'react-native';
+import React, { useState, createContext } from 'react';
+import tw from 'twrnc';
 import {
     accentColor,
     backgroundColor,
     secondaryColor,
     textColor,
-} from "../beautify/colors";
+} from '../beautify/colors';
 //import { FaBrain } from "react-icons/fa";
-import Icon from "react-native-vector-icons/AntDesign";
-import Toast from "react-native-simple-toast";
-import MyButton from "../components/MyButton";
-import MenuModal from "../components/MenuModal";
+import Icon from 'react-native-vector-icons/AntDesign';
+import Toast from 'react-native-simple-toast';
+import MyButton from '../components/MyButton';
+import MenuModal from '../components/MenuModal';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     const tasks = [
-        "Get Something Done",
-        "Do Some Exercies",
-        "Do Some Work",
-        "Clean The House",
-        "Beat up Rohit",
-        "Steal Some Money",
-        "Say Sorry To GOD",
+        'Get Something Done',
+        'Do Some Exercies',
+        'Do Some Work',
+        'Clean The House',
+        'Beat up Rohit',
+        'Steal Some Money',
+        'Say Sorry To GOD',
     ];
     const [menuModal, setMenuModal] = useState(false);
     return (
@@ -49,7 +49,8 @@ const HomeScreen = () => {
                             <Icon
                                 onPress={() => {
                                     //Menu Modal Component
-                                    setMenuModal(!menuModal);
+                                    //setMenuModal(!menuModal);
+                                    navigation.navigate('Setting');
                                 }}
                                 name="bars"
                                 size={25}
@@ -59,7 +60,8 @@ const HomeScreen = () => {
                             <Icon
                                 onPress={() => {
                                     //ProfileScreen Component
-                                    Toast.show("Pressed Profile");
+                                    // Toast.show('Pressed Profile');
+                                    navigation.navigate('Profile');
                                 }}
                                 name="user"
                                 size={23}
@@ -89,10 +91,20 @@ const HomeScreen = () => {
                             </ScrollView>
                         </View>
                         <View
-                            style={tw`flex mt-4 h-full w-full rounded-lg border-4 border-[${secondaryColor}] p-12 m-2 items-center`}
+                            style={tw`flex mt-6 h-2/7 justify-center w-full rounded-lg border-4 border-[${secondaryColor}] p-10 items-center`}
                         >
-                            <MyButton title="TAKE A QUIZ" icon="paperclip" />
-                            <MyButton title="GENERATE TASK" icon="pluscircle" />
+                            <MyButton
+                                title="TAKE A QUIZ"
+                                icon="paperclip"
+                                name="quiz"
+                                navigation={navigation}
+                            />
+                            <MyButton
+                                title="GENERATE TASK"
+                                icon="pluscircle"
+                                name="task"
+                                navigation={navigation}
+                            />
                         </View>
                     </SafeAreaView>
                 </>
@@ -119,7 +131,7 @@ const ListItems = (props) => {
                         {props.task}
                     </Text>
                     <Icon
-                        name={isChecked ? "check" : ""}
+                        name={isChecked ? 'check' : ''}
                         size={20}
                         color={accentColor}
                         style={tw`flex w-2/9 text-center`}

@@ -4,19 +4,19 @@ import {
     StatusBar,
     TextInput,
     TouchableOpacity,
-} from "react-native";
-import React from "react";
-import tw from "twrnc";
+} from 'react-native';
+import React from 'react';
+import tw from 'twrnc';
 import {
     backgroundColor,
     accentColor,
     textColor,
     secondaryColor,
-} from "../beautify/colors";
-import Icon from "react-native-vector-icons/AntDesign";
-import MyButton from "../components/MyButton";
+} from '../beautify/colors';
+import Icon from 'react-native-vector-icons/AntDesign';
+import MyButton from '../components/MyButton';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     return (
         <>
             <View
@@ -40,7 +40,12 @@ const LoginScreen = () => {
                         keyboardType="number-pad"
                         style={tw`h-14 w-full text-xl tracking-tight rounded-xl m-5 pl-5 items-center border-2 border-[${secondaryColor}] my-8 font-bold text-[${textColor}]`}
                     ></TextInput>
-                    <MyButton title="Submit" icon="checkcircle" />
+                    <MyButton
+                        title="Submit"
+                        icon="checkcircle"
+                        name="otp"
+                        navigation={navigation}
+                    />
                 </View>
             </View>
         </>
